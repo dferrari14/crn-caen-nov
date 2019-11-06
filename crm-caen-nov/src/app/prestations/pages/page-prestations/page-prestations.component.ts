@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PrestationsService } from '../../services/prestations.service';
 import { Prestation } from 'src/app/shared/models/prestation';
+import { State } from 'src/app/shared/enums/state.enum';
 
 @Component({
   selector: 'app-page-prestations',
@@ -10,6 +11,7 @@ import { Prestation } from 'src/app/shared/models/prestation';
 export class PagePrestationsComponent implements OnInit {
 public collection: Prestation[];
 public headers: string[];
+public states = State;
   constructor(private prestationService: PrestationsService) { }
 
 
@@ -26,6 +28,10 @@ public headers: string[];
       'State'
     ];
 
+  }
+
+  public update(item: any, event) {
+    this.prestationService.update(item, event.target.value);
   }
 
 }
