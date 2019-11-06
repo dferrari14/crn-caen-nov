@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PrestationsService } from '../../services/prestations.service';
+import { Prestation } from 'src/app/shared/models/prestation';
 
 @Component({
   selector: 'app-page-prestations',
@@ -6,10 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-prestations.component.scss']
 })
 export class PagePrestationsComponent implements OnInit {
+public collection: Prestation[];
+public headers: string[];
+  constructor(private prestationService: PrestationsService) { }
 
-  constructor() { }
+
 
   ngOnInit() {
+    this.collection = this.prestationService.collection;
+    this.headers = [
+      'Type',
+      'Client',
+      'NbJours',
+      'TjmHT',
+      'Total HT',
+      'Total TTC',
+      'State'
+    ];
+
   }
 
 }
