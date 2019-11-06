@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Prestation } from 'src/app/shared/models/prestation';
 import { fakePrestations } from './fake-prestations';
 import { State } from 'src/app/shared/enums/state.enum';
+import { StateClient } from 'src/app/shared/enums/state-client.enum';
+import { Client } from 'src/app/shared/models/client';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +26,7 @@ export class PrestationsService {
     this.pCollection = col;
   }
 
- public update(item: Prestation, state: State){
+ public update(item: Client, state: StateClient){
    item.state = state;
  }
 
