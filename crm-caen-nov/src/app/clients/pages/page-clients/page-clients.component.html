@@ -1,4 +1,5 @@
-<app-tableau-dark [headers]="headers">
+<app-template-b [title]="title" [label]="label">
+  <app-tableau-dark [headers]="headers">
     <tr *ngFor="let item of collection">
         <td>{{ item.id}}</td>
         <td>{{ item.name}}</td>
@@ -9,5 +10,7 @@
             </select>
           </td>
     </tr>
-</app-tableau-dark>
+  </app-tableau-dark>
+  <app-button [label]="labelBtn" [route]="routeBtn"></app-button>
+</app-template-b>
 

@@ -15,7 +15,13 @@ export class PageClientsComponent implements OnInit {
 public collection: Client[];
 public headers: string[];
 public states = StateClient;
-  constructor(private clientService: ClientsService ) { }
+public title: string;
+public label: string;
+public routeBtn: string;
+public labelBtn: string;
+
+  constructor(private clientService: ClientsService ) {
+  }
 
 
 
@@ -27,7 +33,11 @@ public states = StateClient;
       'email',
       'etat'
     ];
-
+    this.title = 'Client';
+    this.label = 'Tous le clients !';
+    this.title = 'Client';
+    this.labelBtn = 'ajouter un clients';
+    this.routeBtn = 'add';
   }
 
   public update(item: any, event) {

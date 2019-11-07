@@ -1,4 +1,5 @@
-<app-tableau-light [headers]="headers">
+<app-template-b [title]="title" [label]="label">
+  <app-tableau-light [headers]="headers">
     <tr *ngFor="let item of collection">
         <td>{{ item.typePresta}}</td>
         <td>{{ item.client}}</td>
@@ -12,4 +13,6 @@
           </select>
         </td>
     </tr>
-</app-tableau-light>
+  </app-tableau-light>
+  <app-button [label]="labelBtn" [route]="routeBtn"></app-button>
+</app-template-b>
