@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PrestationsService } from '../../services/prestations.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Prestation } from 'src/app/shared/models/prestation';
 
 @Component({
   selector: 'app-page-add-prestation',
@@ -11,7 +12,7 @@ export class PageAddPrestationComponent implements OnInit {
   public title: string;
   public label: string;
 
-  constructor(private prestationService: PrestationsService, private route: ActivatedRoute) {
+  constructor(private prestationService: PrestationsService, private route: ActivatedRoute, private router: Router) {
 
   }
 
@@ -24,4 +25,12 @@ export class PageAddPrestationComponent implements OnInit {
     });
   }
 
+
+  public add(item: Prestation){
+    console.log(item);
+    this.prestationService.add(item);
+    // this.router.navigate(['prestations']);
+
+    this.router.navigate(['../'], {relativeTo: this.route});
+  }
 }

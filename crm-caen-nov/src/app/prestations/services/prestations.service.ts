@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Prestation } from 'src/app/shared/models/prestation';
 import { fakePrestations } from './fake-prestations';
-import { State } from 'src/app/shared/enums/state.enum';
 import { StateClient } from 'src/app/shared/enums/state-client.enum';
 import { Client } from 'src/app/shared/models/client';
 
@@ -30,8 +29,10 @@ export class PrestationsService {
    item.state = state;
  }
 
-  // add item in collection
-  // update item in collection
+ public add(item: Prestation){
+   this.collection.push(new Prestation(item));
+ }
+
   // delete item in collection
   // get item by id
 }
